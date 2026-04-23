@@ -1,0 +1,119 @@
+.dashboard-layout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.target-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toggle-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.toggle-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--neutral-slate-600);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    margin-right: 2px;
+}
+
+.toggle-separator {
+    width: 1px;
+    height: 20px;
+    background: var(--dark-border);
+    margin: 0 6px;
+}
+
+.workspace-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.terminal-body {
+    padding: 16px 20px;
+    height: 360px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(10, 1, 24, 0.5);
+}
+
+.intelligence-body {
+    padding: 4px 20px;
+    height: 360px;
+    overflow-y: auto;
+}
+
+.progress-row {
+    padding: 0 20px 16px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-label {
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--neutral-slate-500);
+}
+
+.progress-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--dark-secondary);
+}
+
+.engine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 20px;
+}
+
+@media (max-width: 1100px) {
+    .workspace-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .engine-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .dashboard-main { padding: 16px; gap: 14px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .engine-grid { grid-template-columns: repeat(2, 1fr); }
+}

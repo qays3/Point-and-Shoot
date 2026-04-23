@@ -1,0 +1,118 @@
+.landing {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 32px;
+    text-align: center;
+}
+
+
+.landing-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dark-accent);
+    margin-bottom: 24px;
+    animation: fadeUp 0.5s ease both;
+}
+
+.landing-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--white);
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    animation: fadeUp 0.5s ease 0.08s both;
+}
+
+.landing-title .gradient-text {
+    background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.landing-sub {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--neutral-slate-500);
+    max-width: 460px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    animation: fadeUp 0.5s ease 0.16s both;
+}
+
+.landing-cta {
+    margin-bottom: 72px;
+    animation: fadeUp 0.5s ease 0.24s both;
+}
+
+.landing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 760px;
+    width: 100%;
+    animation: fadeUp 0.5s ease 0.32s both;
+}
+
+.landing-card {
+    background: rgba(26, 11, 46, 0.6);
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: left;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(8px);
+}
+
+.landing-card:hover {
+    border-color: var(--dark-primary-30);
+    transform: translateY(-3px);
+}
+
+.landing-card-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--dark-primary), var(--dark-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+}
+
+.landing-card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--neutral-slate-500);
+    margin-bottom: 8px;
+}
+
+.landing-card-desc {
+    font-size: 0.82rem;
+    color: var(--neutral-slate-600);
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .landing-cards { grid-template-columns: 1fr; }
+    .landing { padding: 60px 20px; }
+}

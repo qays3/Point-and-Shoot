@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Point-and-Shoot</title>
+    <link rel="icon" type="image/png" href="assets/imgs/logo/icon.png" />
+    <link rel="stylesheet" href="assets/css/root.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body>
+    <div id="app" class="dashboard-layout">
+
+        <div class="page-bg">
+            <svg class="crosshair-svg" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g class="ch-outer-ring">
+                    <circle cx="512" cy="512" r="440" stroke="#9333ea" stroke-width="3" stroke-dasharray="60 24" stroke-linecap="round"/>
+                    <circle cx="512" cy="512" r="440" stroke="white" stroke-width="18" stroke-dasharray="120 168" stroke-linecap="butt"/>
+                </g>
+                <g class="ch-mid-ring">
+                    <circle cx="512" cy="512" r="340" stroke="#9333ea" stroke-width="2.5" stroke-dasharray="40 18" stroke-linecap="round"/>
+                    <circle cx="512" cy="512" r="340" stroke="white" stroke-width="14" stroke-dasharray="80 120" stroke-linecap="butt"/>
+                </g>
+                <g class="ch-inner-ring">
+                    <circle cx="512" cy="512" r="220" stroke="#9333ea" stroke-width="2" stroke-dasharray="28 14"/>
+                </g>
+                <g class="ch-lock-ring">
+                    <circle cx="512" cy="512" r="160" stroke="#ec4899" stroke-width="2.5" stroke-dasharray="80 300" stroke-linecap="round"/>
+                </g>
+                <g class="ch-crosshair" stroke="white" stroke-width="10" stroke-linecap="butt">
+                    <line x1="512" y1="72"  x2="512" y2="180"/>
+                    <line x1="512" y1="844" x2="512" y2="952"/>
+                    <line x1="72"  y1="512" x2="180" y2="512"/>
+                    <line x1="844" y1="512" x2="952" y2="512"/>
+                </g>
+                <g class="ch-crosshair" stroke="#9333ea" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="512" y1="210" x2="512" y2="310"/>
+                    <line x1="512" y1="714" x2="512" y2="814"/>
+                    <line x1="210" y1="512" x2="310" y2="512"/>
+                    <line x1="714" y1="512" x2="814" y2="512"/>
+                </g>
+                <g class="ch-scan-line" stroke="#9333ea" stroke-width="1.5" stroke-linecap="round" opacity="0.6">
+                    <line x1="512" y1="512" x2="512" y2="90"/>
+                    <line x1="512" y1="512" x2="680" y2="200"/>
+                    <line x1="512" y1="512" x2="780" y2="340"/>
+                    <line x1="512" y1="512" x2="820" y2="512"/>
+                </g>
+                <g class="ch-crosshair" stroke="#9333ea" stroke-width="2" stroke-linecap="round">
+                    <line x1="570" y1="340" x2="590" y2="320"/>
+                    <line x1="590" y1="340" x2="570" y2="320"/>
+                    <line x1="620" y1="390" x2="640" y2="370"/>
+                    <line x1="640" y1="390" x2="620" y2="370"/>
+                    <line x1="390" y1="620" x2="410" y2="600"/>
+                    <line x1="410" y1="620" x2="390" y2="600"/>
+                    <line x1="340" y1="570" x2="360" y2="550"/>
+                    <line x1="360" y1="570" x2="340" y2="550"/>
+                    <line x1="570" y1="684" x2="590" y2="664"/>
+                    <line x1="590" y1="684" x2="570" y2="664"/>
+                    <line x1="640" y1="634" x2="660" y2="614"/>
+                    <line x1="660" y1="634" x2="640" y2="614"/>
+                </g>
+                <rect class="ch-crosshair" x="476" y="476" width="72" height="72" rx="4" stroke="#9333ea" stroke-width="2.5" fill="none"/>
+                <g class="ch-dot">
+                    <circle cx="512" cy="512" r="16" fill="white"/>
+                    <circle cx="512" cy="512" r="10" fill="#9333ea"/>
+                    <circle cx="512" cy="512" r="4"  fill="white"/>
+                </g>
+                <g class="ch-star">
+                    <line x1="512" y1="490" x2="512" y2="534" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                    <line x1="490" y1="512" x2="534" y2="512" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                    <line x1="496" y1="496" x2="528" y2="528" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="528" y1="496" x2="496" y2="528" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="512" cy="512" r="5" fill="#ec4899"/>
+                    <circle cx="512" cy="490" r="2.5" fill="white"/>
+                    <circle cx="512" cy="534" r="2.5" fill="white"/>
+                    <circle cx="490" cy="512" r="2.5" fill="white"/>
+                    <circle cx="534" cy="512" r="2.5" fill="white"/>
+                    <circle cx="496" cy="496" r="2" fill="#ec4899"/>
+                    <circle cx="528" cy="528" r="2" fill="#ec4899"/>
+                    <circle cx="528" cy="496" r="2" fill="#ec4899"/>
+                    <circle cx="496" cy="528" r="2" fill="#ec4899"/>
+                </g>
+                <g class="ch-crosshair" stroke="#9333ea" stroke-width="1.5" opacity="0.4">
+                    <line x1="512" y1="400" x2="512" y2="420"/>
+                    <line x1="512" y1="604" x2="512" y2="624"/>
+                    <line x1="400" y1="512" x2="420" y2="512"/>
+                    <line x1="604" y1="512" x2="624" y2="512"/>
+                </g>
+            </svg>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <div class="navbar-logo">
+                    <img src="assets/imgs/logo/icon.png" alt="Point-and-Shoot" />
+                </div>
+                <span class="navbar-brand-name">Point-and-<span>Shoot</span></span>
+            </div>
+            <div class="navbar-right">
+                <div class="status-pill">
+                    <span class="status-dot idle" id="statusDot"></span>
+                    <span id="statusText">Idle</span>
+                </div>
+                <div class="navbar-nav">
+                    <button class="nav-link" onclick="location.href='/'">Home</button>
+                    <button class="nav-link active">Dashboard</button>
+                    <button class="nav-link" onclick="location.href='report'">Report</button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="dashboard-main">
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">High Severity</div>
+                    <div class="stat-value high" id="statHigh">0</div>
+                    <div class="stat-sub">Critical findings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Med Severity</div>
+                    <div class="stat-value med" id="statMed">0</div>
+                    <div class="stat-sub">Notable findings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Low Severity</div>
+                    <div class="stat-value low" id="statLow">0</div>
+                    <div class="stat-sub">Informational</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Engines</div>
+                    <div class="stat-value good" id="statEngines">0/9</div>
+                    <div class="stat-sub">Completed</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">
+                        <span class="card-title-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        </span>
+                        Target Console
+                    </span>
+                </div>
+                <div class="card-body">
+                    <div class="target-row">
+                        <div class="input-wrap">
+                            <span class="input-icon">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                            </span>
+                            <input type="url" class="input-field" id="targetInput" placeholder="https://target.example.com" autocomplete="off" spellcheck="false"/>
+                        </div>
+                        <button class="btn btn-scan" id="scanBtn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Scan Now
+                        </button>
+                    </div>
+                    <div id="progressWrapper" class="progress-row" style="display:none;">
+                        <div class="progress-meta">
+                            <span class="progress-label" id="progressLabel">Initializing...</span>
+                            <span class="progress-pct" id="progressPct">0%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="progressFill" style="width:0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">
+                        <span class="card-title-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </span>
+                        Engine Toggle
+                    </span>
+                </div>
+                <div class="card-body">
+                    <div class="toggle-row" id="toggleDeck">
+                        <span class="toggle-label">Recon</span>
+                        <button class="toggle-btn active" data-engine="subdomain">Subdomain</button>
+                        <button class="toggle-btn active" data-engine="pulse">Pulse</button>
+                        <button class="toggle-btn active" data-engine="dns">DNS</button>
+                        <button class="toggle-btn active" data-engine="xray">X-Ray</button>
+                        <div class="toggle-separator"></div>
+                        <span class="toggle-label">Active</span>
+                        <button class="toggle-btn active" data-engine="idor">IDOR</button>
+                        <button class="toggle-btn active" data-engine="dirfinder">Dir Finder</button>
+                        <button class="toggle-btn active" data-engine="secrets">Secrets</button>
+                        <button class="toggle-btn active" data-engine="cors">CORS</button>
+                        <button class="toggle-btn active" data-engine="headers">Headers</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workspace-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">
+                            <span class="live-dot inactive" id="termDot"></span>
+                            Live Terminal
+                        </span>
+                        <button class="btn btn-ghost btn-sm" onclick="document.getElementById('terminalBody').innerHTML=''">Clear</button>
+                    </div>
+                    <div class="terminal-body" id="terminalBody">
+                        <div class="empty-state">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                            <span class="empty-state-text">Enter a target URL and click Scan Now</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">
+                            <span class="live-dot inactive" id="reportDot"></span>
+                            Intelligence Report
+                        </span>
+                        <button class="btn btn-ghost btn-sm" onclick="location.href='report'">Full Report</button>
+                    </div>
+                    <div class="intelligence-body" id="intelligenceBody">
+                        <div class="empty-state">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                            <span class="empty-state-text">Findings will appear here during scan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">
+                        <span class="card-title-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </span>
+                        Engine Status
+                    </span>
+                </div>
+                <div class="engine-grid" id="engineGrid">
+                    <div class="engine-chip" data-engine-status="subdomain"><span class="status-dot idle"></span><span class="engine-chip-name">Subdomain Enumerator</span></div>
+                    <div class="engine-chip" data-engine-status="pulse"><span class="status-dot idle"></span><span class="engine-chip-name">Pulse Checker</span></div>
+                    <div class="engine-chip" data-engine-status="dns"><span class="status-dot idle"></span><span class="engine-chip-name">DNS Investigator</span></div>
+                    <div class="engine-chip" data-engine-status="xray"><span class="status-dot idle"></span><span class="engine-chip-name">Tech Stack X-Ray</span></div>
+                    <div class="engine-chip" data-engine-status="idor"><span class="status-dot idle"></span><span class="engine-chip-name">IDOR Hunter</span></div>
+                    <div class="engine-chip" data-engine-status="dirfinder"><span class="status-dot idle"></span><span class="engine-chip-name">Directory Finder</span></div>
+                    <div class="engine-chip" data-engine-status="secrets"><span class="status-dot idle"></span><span class="engine-chip-name">Secret Sniffer</span></div>
+                    <div class="engine-chip" data-engine-status="cors"><span class="status-dot idle"></span><span class="engine-chip-name">CORS Interrogator</span></div>
+                    <div class="engine-chip" data-engine-status="headers"><span class="status-dot idle"></span><span class="engine-chip-name">Header Analyzer</span></div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="assets/js/models/scanModel.js"></script>
+    <script src="assets/js/models/reportModel.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/views/terminalView.js"></script>
+    <script src="assets/js/views/toggleView.js"></script>
+    <script src="assets/js/views/dashboardView.js"></script>
+    <script src="assets/js/controllers/dashboardController.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

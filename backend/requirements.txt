@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+httpx
+dnspython
+sqlalchemy
+alembic
+python-dotenv
+websockets
